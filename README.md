@@ -66,11 +66,14 @@ Notebooks were saved and exported from Colab into the project.
 
 ## Tech Stack
 
+
 - Python 3  
 - Scikit-learn  
 - Pandas  
 - Joblib  
+- NLTK  
 - Streamlit
+
 
 ---
 
@@ -79,7 +82,7 @@ Notebooks were saved and exported from Colab into the project.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/spam-detector-streamlit.git
+git clone https://github.com/YOUR_USERNAME/spam-detector-streamlit.git 
 cd spam-detector-streamlit
 ```
 ### 2. Install Dependencies
