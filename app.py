@@ -10,11 +10,7 @@ from nltk.stem import WordNetLemmatizer
 nltk.download("stopwords")
 nltk.download("wordnet")
 
-
-try:
-    nltk.data.find("corpora/stopwords")
-except LookupError:
-    nltk.download("stopwords")
+nltk.data.path.append("./nltk_data")
 
 try:
     nltk.data.find("corpora/stopwords")
@@ -27,7 +23,7 @@ vectorizer = joblib.load("tfidf_vectorizer_path2.pkl")
 
 # Initialize lemmatizer and stopwords
 lemmatizer = WordNetLemmatizer()
-custom_stop_words = set(stopwords.words("english")) - set(["not", "no", "very", "don’t", "wasn’t"])
+custom_stop_words = set(stopwords.words("english")) - set(["won"])
 
 # Preprocessing function
 def preprocess_text(text):
