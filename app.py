@@ -3,12 +3,15 @@ import joblib
 import re
 import string
 import nltk
+import os
+
+
+nltk.data.path.append(os.path.join(os.path.dirname(__file__), "nltk_data"))
+
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# Download NLTK resources if needed
-nltk.download("stopwords")
-nltk.download("wordnet")
+
 
 nltk.data.path.append("./nltk_data")
 
