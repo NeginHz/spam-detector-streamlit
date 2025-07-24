@@ -5,6 +5,7 @@ import string
 import nltk
 import os
 from sklearn.exceptions import NotFittedError
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Add custom nltk data path (if bundled with the app)
 nltk_path = os.path.join(os.path.dirname(__file__), "nltk_data")
