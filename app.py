@@ -6,19 +6,20 @@ import nltk
 import os
 
 
-nltk.data.path.append(os.path.join(os.path.dirname(__file__), "nltk_data"))
+nltk_path = os.path.join(os.path.dirname(__file__), "nltk_data")
+nltk.data.path.append(nltk_path)
 
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-
-
-
-nltk.data.path.append("./nltk_data")
+try:
+    stop_words = set(stopwords.words("english"))
+except LookupError:
+    raise RuntimeError("❌ stopwords not found. Make sure nltk_data is in the correct path and committed to GitHub.")
 
 try:
-    nltk.data.find("corpora/stopwords")
+    lemmatizer = WordNetLemmatizer()
 except LookupError:
-    nltk.download("stopwords")
+    raise RuntimeError("❌ WordNet not found. Make sure nltk_data/wordnet is available.")
 
 # Load model and vectorizer
 model = joblib.load("svm2_model.pkl")
