@@ -10,6 +10,17 @@ from nltk.stem import WordNetLemmatizer
 nltk.download("stopwords")
 nltk.download("wordnet")
 
+
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
+
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
+
 # Load model and vectorizer
 model = joblib.load("svm2_model.pkl")
 vectorizer = joblib.load("tfidf_vectorizer_path2.pkl")
